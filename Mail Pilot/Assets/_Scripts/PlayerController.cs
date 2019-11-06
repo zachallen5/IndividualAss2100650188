@@ -120,6 +120,9 @@ public class PlayerController : MonoBehaviour
                 //TODO: bullet object. 
                 //TODO: Ensure you position the new bullet at the bulletSpawn position
                 //   Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
+
+                //Ask BulletPoolManager for bullet. if one is available it is spawned 
+                //to the bullet's spawn and rotation values and then set to active so it is able to be fired
                 GameObject bullet = BulletPoolManager.SharedInstance.GetBullet();
                 if (bullet != null)
                 {

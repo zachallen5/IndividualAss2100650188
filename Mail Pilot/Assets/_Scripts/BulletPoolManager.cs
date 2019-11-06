@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Util;
 
 // TODO: Bonus - make this class a Singleton!
 
@@ -19,6 +20,8 @@ public class BulletPoolManager : MonoBehaviour
     public List<GameObject> pooledObjects;
     public GameObject objectToPool;
     public int amountToPool;
+    public Boundary boundary;
+    public BulletPoolManager resetObj;
 
 
 
@@ -56,18 +59,36 @@ public class BulletPoolManager : MonoBehaviour
             //Check to see if bullet is active in scene. If it is, move to next bullet
             if (!pooledObjects[i].activeInHierarchy)
             {
+            //    GameObject tempObj;
                 return pooledObjects[i];
             }
+            
         }
+        //if everything is active return nothing
         return null;
     }
 
-  
+
 
 
     //TODO: modify this function to reset/return a bullet back to the Pool 
     public void ResetBullet(GameObject bullet)
     {
+
+        //if (transform.position.y >= boundary.Top)
+        //{
+
+        //    if (gameObject.tag == "Bullet")
+        //    {
+        //        gameObject.SetActive(false);
+        //        pooledObjects.Add(bullet);
+        //    }
+        //    // if its not a bullet just destroy it 
+        //    else
+        //    {
+        //        Destroy(gameObject);
+        //    }
+        //}
 
     }
 }
